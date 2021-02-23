@@ -2,8 +2,9 @@ package io.github.retropacifist.mobs.common;
 
 import io.github.retropacifist.mobs.client.PotionStudiosMobsClient;
 import io.github.retropacifist.mobs.common.entities.PotionStudiosMobsEntities;
+import io.github.retropacifist.mobs.common.entities.ScuttlerEntity;
+import io.github.retropacifist.mobs.common.entities.TempleGuardEntity;
 import io.github.retropacifist.mobs.common.items.PotionStudiosMobsItems;
-import net.minecraft.entity.MobEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,7 +36,8 @@ public class PotionStudiosMobs {
     }
 
     public void createAttributes(EntityAttributeCreationEvent event) {
-        event.put(PotionStudiosMobsEntities.TEMPLE_GUARD.get(), MobEntity.func_233666_p_().create());
+        event.put(PotionStudiosMobsEntities.SCUTTLER.get(), ScuttlerEntity.createAttributes());
+        event.put(PotionStudiosMobsEntities.TEMPLE_GUARD.get(), TempleGuardEntity.createAttributes());
     }
 
     public static ResourceLocation createLocation(String path) {

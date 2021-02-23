@@ -1,21 +1,20 @@
 package io.github.retropacifist.mobs.common.entities;
 
+import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class TempleGuardEntity extends MonsterEntity implements PotionStudiosMobEntity<TempleGuardEntity> {
+public class ScuttlerEntity extends CreatureEntity implements PotionStudiosMobEntity<ScuttlerEntity> {
     protected final AnimationFactory factory = new AnimationFactory(this);
 
-    public TempleGuardEntity(EntityType<? extends TempleGuardEntity> type, World worldIn) {
+    public ScuttlerEntity(EntityType<? extends ScuttlerEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -29,12 +28,6 @@ public class TempleGuardEntity extends MonsterEntity implements PotionStudiosMob
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-
-        if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.temple_guard.walk", true));
-            return PlayState.CONTINUE;
-        }
-        
         return PlayState.STOP;
     }
 
