@@ -9,7 +9,6 @@ import static net.minecraftforge.registries.ForgeRegistries.ITEMS;
 public class PotionStudiosMobsItems {
     public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ITEMS, MOD_ID);
 
-    // prevent instantiating.
     private PotionStudiosMobsItems() {
     }
 }
